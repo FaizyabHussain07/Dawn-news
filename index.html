@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAWN NEWS PAPER</title>
+    <style>
+        .heading{
+            margin-left: 150px;
+            margin-right: 400px;
+
+        }
+        .row {
+            background: #282829;
+            text-align: center;
+            font-size: small;
+            width: 100%;
+            height: 20%;
+        }
+
+        .row nav ul li a {
+            color: #7481ad;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .center h1 {
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .center p {
+            text-align: center;
+
+        }
+
+        .voice {
+            margin-left: 100px;
+            margin-right: 400px;
+        }
+
+        .voice p {
+            word-spacing: 2px;
+            font-size: larger;
+        }
+
+        #controls {
+            margin-top: 20px;
+        }
+
+        #groupButton {
+            margin-left: 20px;
+
+            border: none;
+            padding: 10px 20px;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: rgb(181, 216, 181);
+        }
+
+        #groupButton img {
+            margin-right: 10px;
+        }
+
+
+        input[type="text"] {
+            margin-left: 350px;
+            margin-top: 20px;
+            width: 300px;
+            /* Input field width */
+            padding: 10px;
+            /* Padding inside the input */
+            border-radius: 10px;
+            /* Rounded corners for the input */
+            border: 1px solid #ccc;
+            /* Light gray border */
+            font-size: 16px;
+            /* Font size for input */
+        }
+
+        button {
+            padding: 10px 15px;
+            /* Padding for the button */
+            margin-left: 10px;
+            /* Space between input and button */
+            border: none;
+            /* No border for the button */
+            background-color: #3498db;
+            /* Button background color */
+            color: white;
+            /* Text color */
+            border-radius: 8px;
+            /* Rounded corners for the button */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            font-size: 16px;
+            /* Font size for button */
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            /* Darker blue on hover */
+        }
+
+
+        .related {
+            margin-left: 370px;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+
+
+
+
+        .news-section {
+            display: flex;
+
+
+        }
+
+        .news-item {
+            background: #fff;
+
+
+            flex: 1;
+            /* 3 items in a row */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item p {
+            font-size: small;
+            text-align: left;
+            margin-right: 90px;
+        }
+
+        .news-item img {
+            width: 270px;
+            border-radius: 5px;
+
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            /* space between items */
+        }
+
+        .item {
+            flex: 1 1 calc(33.333% - 10px);
+            /* 3 items in a row */
+            background: #f8f8f8;
+
+            border-radius: 5px;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .item h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            width: 100%;
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+        .footer-section h3 {
+            color: #ddd;
+            font-size: 16px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+        .footer-section ul li a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        .social-icons img, .app-icons img {
+            width: 24px;
+            margin-right: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .video-box {
+            text-align: left;
+          margin: 20px;
+        }
+        .video-box iframe {
+            width: 300px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+        .video-box p {
+            text-align: left;
+          margin: 20px;
+        }
+    </style>
+
+    <!-- Font Awesome for Search Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <nav>
+                <ul>
+                    <li><a href="#">E-PAPER</a></li>
+                    <li><a href="#">LIVE TV</a></li>
+                    <li><a href="#">DAWNNEWS URDU</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#">Herald</a></li>
+                    <li><a href="#">Aurora</a></li>
+                    <li><a href="#">CityFM89</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Events / Supplements</a></li>
+                    <li><a href="#">Classifieds</a></li>
+                    <li><a href="#">Obituaries</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="center">
+            <h1>DAWN</h1>
+            <p>E-Paper | September 30, 2024</p>
+        </div>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">Gaza siege</a></li>
+                <li><a href="#">Pakistan</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Images</a></li>
+                <li><a href="#">Prism</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Magazines</a></li>
+                <li><a href="#">Tech</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Archive</a></li>
+                <li><a href="#">Flood Donations</a></li>
+                <li>
+                    <div>
+                        <input type="text" placeholder="Search...">
+                        <button onclick="search()">Search</button>
+                    </div>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section class="headline">
+            <h1>148 dead in Nepal floods after relentless monsoon rains</h1>
+            <hr>
+            <p><a href="#">AFP</a><strong> | Published:</strong> September 29, 2024 | Updated a day ago</p>
+            <img src="first img.PNG" alt="Floods in Nepal">
+            <p>A man carrying a sack of flour wades through floodwater after the Bagmati River overflowed following
+                heavy monsoon rains in Kathmandu on </p>
+            <p>September 28. — AFP</p>
+            <hr>
+        </section>
+        <section class="voice">
+            <!-- Voice Player -->
+            <p>Listen to article</p>
+            <audio id="voicePlayer" controls>
+
+                <source src="WhatsApp Ptt 2024-09-30 at 11.00.53 AM.ogg" type="audio/mp3">
+            </audio>
+
+
+            <br><br>
+            <!-- Group Button with WhatsApp Logo -->
+            <button id="groupButton">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="24"
+                    height="24">
+                Join our Whatsapp channel
+            </button>
+            <h2><b>
+                    <p>Residents of Nepal’s flood-hit capital returned to their mud-caked homes on Sunday to survey the
+                        wreckage of devastating floods that have killed at least 148 people across the Himalayan
+                        republic.</p>
+                </b></h2>
+
+            <p> Deadly rain-related floods and landslides are common across South Asia during the monsoon season from
+                June to September, but experts say<a href="#"> climate change</a> is increasing their frequency and
+                severity.</p>
+
+            <p>Entire neighbourhoods in Kathmandu were<a href="#"> inundated</a> over the weekend with flash floods
+                reported in rivers coursing through the capital and extensive damage to highways connecting the city
+                with the rest of Nepal.</p>
+
+            <p>Kumar Tamang, who lives in a slum area by a riverbank, told<i> AFP</i> that he and his family had to flee
+                after midnight on Saturday as waters rushed into his shack.</p>
+
+            <p> “This morning we returned and everything looks different,” the 40-year-old said. “We couldn’t even open
+                the doors to our house, it was jammed with mud,” he added. “Yesterday we were afraid that the water
+                would kill us,
+                but today we have no water to clean.”</p>
+
+            <p>Nepal’s National Disaster Risk Reduction and Management Authority said 148 people had been killed across
+                the country with another 59 still missing.</p>
+
+            <p> Home Ministry spokesman Rishi Ram Tiwari told <i> AFP</i> that bulldozers were being used to clear
+                several highways that had been blocked by debris, cutting Kathmandu off from the rest of the country.
+                “More than
+                3,000 people have been rescued,” he added.</p>
+
+            <p>At least 36 of those killed were aboard three vehicles and were buried alive when earth from a landslide
+                careened into a highway south of Kathmandu, Nepal Police spokesman Dan Bahadur Karki told <i> AFP</i>.
+            </p>
+
+            <p>The valley in which the capital sits recorded 240 millimetres (mm) of rain, the country’s weather bureau
+                told The <a href="#">Kathmandu Post</a> newspaper. The report said that it was the highest rainfall
+                recorded in
+                Kathmandu since at least 1970.</p>
+
+            <h2>Chest-deep water</h2>
+            <p>The Bagmati River and its numerous tributaries which cut through Kathmandu broke their banks, inundating
+                nearby
+                homes and vehicles after midnight on Saturday.</p>
+
+            <p>Residents struggled through chest-deep water to get to higher ground. Bishnu Maya Shrestha, who lived in
+                another
+                inundated area of Kathmandu, said they had to cut the roof of their homes to escape.</p>
+
+            <p> “We jumped from one roof to another to safety and finally they came with boats to rescue us,” Shrestha
+                told <i> AFP</i>.</p>
+
+            <p>More than 3,000 security personnel were deployed to assist rescue efforts with helicopters and
+                motorboats. Rescue teams were using rafts to pull survivors to safety.</p>
+
+            <p>Domestic flights resumed in and out of Kathmandu by Sunday morning after weather forced a complete
+                stoppage from Friday evening, with more than 150 departures cancelled.</p>
+
+            <p>The summer monsoon brings South Asia 70-80 per cent of its annual rainfall. Monsoon rains from June to
+                September bring widespread <a href="#">death and destruction</a> every year across South Asia, but the
+                number of fatal floods and landslides has increased in recent years.</p>
+
+            <div class="related">
+                <strong>RELATED:</strong> Monsoon havoc
+            </div>
+
+            <P>Experts say climate change has worsened their frequency and intensity.</P>
+
+            <P>A landslide that hit a road in Chitwan district in July pushed two buses with 59 passengers aboard into a
+                river.
+                Three people were able to escape alive, but authorities managed to recover only 20 bodies from the
+                accident, with
+                raging flood waters impeding the search.</P>
+
+            <P>More than 260 people have died in Nepal in rain-related disasters this year.</P>
+        </section>
+        <hr>
+        <section>
+
+            <div class="container">
+                <h2>Read More</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <img src="readmore1.PNG" alt="Monsoon Rains">
+                        <p>Devastating monsoon rains claim 19 lives in Balochistan</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="readmore1.PNG" alt="Nepal Floods">
+                        <p>Nepal floods and landslides kill at least 66 people, 69 missing</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="readmore1.PNG" alt="Extreme Heat">
+                        <p>26 extra days of extreme heat in a year due to climate change report</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="readmore1.PNG" alt="Viya Telehealth">
+                        <p>Revolutionising reproductive health: Viya launches Viya Telehealth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="container">
+                <h2>On DawnNews</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <img src="img pot.PNG" alt="Nasrallah">
+                        <p>انگریزی محاورے کو اردو میں کہنے کی بلاول بھٹو کی ویڈیو وائرل </p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img pot.PNG" alt="Israeli Attacks">
+                        <p>انگریزی محاورے کو اردو میں کہنے کی بلاول بھٹو کی ویڈیو وائرل </p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img pot.PNG" alt="Digital Footprint">
+                        <p>انگریزی محاورے کو اردو میں کہنے کی بلاول بھٹو کی ویڈیو وائرل </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <hr>
+
+        <section>
+
+    <h2>Watch These Videos</h2>
+    <div class="video-container">
+        
+        <!-- Video 1 -->
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/tCVahMmYfU8" title="YouTube video" allowfullscreen></iframe>
+            <p>Who is Hezbollah’s possible new leader?</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="YouTube video" allowfullscreen></iframe>
+            <p>Who is Hezbollah’s possible new leader?</p>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video" allowfullscreen></iframe>
+            <p>Who is Hezbollah’s possible new leader?</p>
+        </div>
+
+        </section>
+        <hr>
+        <div class="heading">
+            <h2>Dear visitor, the comments section is undergoing an overhaul and will return soon.</h2>
+        </div>
+        <hr>
+        <section>
+            <div class="container">
+                <h2>Latest Stories</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <img src="img bat.PNG" alt="Monsoon Rains">
+                        <p>Devastating monsoon rains claim 19 lives in Balochistan</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img bat.PNG" alt="Nepal Floods">
+                        <p>Nepal floods and landslides kill at least 66 people, 69 missing</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img bat.PNG" alt="Extreme Heat">
+                        <p>26 extra days of extreme heat in a year due to climate change report</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img bat.PNG" alt="Viya Telehealth">
+                        <p>Revolutionising reproductive health: Viya launches Viya Telehealth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="container">
+                <h2>IMAGES</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <img src="img food.PNG" alt="Monsoon Rains">
+                        <p>Devastating monsoon rains claim 19 lives in Balochistan</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img food.PNG" alt="Nepal Floods">
+                        <p>Nepal floods and landslides kill at least 66 people, 69 missing</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img food.PNG" alt="Extreme Heat">
+                        <p>26 extra days of extreme heat in a year due to climate change report</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <div class="container">
+            <h2>Most Popular</h2>
+            <div class="grid">
+                <div class="item">
+                    <img src="img popu.PNG" alt="Sri Lanka deflation">
+                    <h4>01. Cash-strapped Sri Lanka records first deflation in 39 years</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Saad Rafique">
+                    <h4>02. Democracy can't function under remote control: Saad Rafique</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Zakir Naik">
+                    <h4>03. Zakir Naik arrives in Pakistan for month-long visit</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Cartoon">
+                    <h4>04. Cartoon: 1 October, 2024</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Imran Khan">
+                    <h4>05. Imran challenges govt with D-Chowk protest call</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Pedophile ring">
+                    <h4>06. 2 arrested as Mandi Bahauddin police bust suspected pedophile ring</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Quaid-i-Azam University">
+                    <h4>07. 25 students hospitalised after clash at Quaid-i-Azam University</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Deadline">
+                    <h4>08. Deadline to file returns extended to Oct 14</h4>
+                </div>
+                <div class="item">
+                    <img src="img popu.PNG" alt="Punitive tax plan">
+                    <h4>09. Punitive tax plan</h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <section>
+            <div class="container">
+                <h2>Must Readed</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <img src="img must re.PNG" alt="Monsoon Rains">
+                        <p>Devastating monsoon rains claim 19 lives in Balochistan</p>
+                        <p>The strategy appears to rely solely on enforcement through punitive actions without actually
+                            reforming the complicated tax regime.</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img must re.PNG" alt="Nepal Floods">
+                        <p>Nepal floods and landslides kill at least 66 people, 69 missing</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img must re.PNG" alt="Extreme Heat">
+                        <p>26 extra days of extreme heat in a year due to climate change report</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="img must re.PNG" alt="Viya Telehealth">
+                        <p>Revolutionising reproductive health: Viya launches Viya Telehealth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+
+        <div class="container">
+            <h2>Opinion</h2>
+            <div class="news-section">
+
+                <br>
+                <div class="news-item">
+                    <img src="img oponi.PNG" alt="Monsoon Rains">
+                    <p>Updated 01 Oct, 2024</p>
+                    <p>As legacies of colonialism go</p>
+                    <p>Jawed Naqvi</p>
+                </div>
+                <div class="news-item">
+                    <img src="img oponi.PNG" alt="Monsoon Rains">
+                    <p>Updated 01 Oct, 2024</p>
+                    <p>As legacies of colonialism go</p>
+                    <p>Jawed Naqvi</p>
+                </div>
+                <div class="news-item">
+                    <img src="img oponi.PNG" alt="Monsoon Rains">
+                    <p>Updated 01 Oct, 2024</p>
+                    <p>As legacies of colonialism go</p>
+                    <p>Jawed Naqvi</p>
+                </div>
+                <div class="news-item">
+                    <img src="img oponi.PNG" alt="Monsoon Rains">
+                    <p>Updated 01 Oct, 2024</p>
+                    <p>As legacies of colonialism go</p>
+                    <p>Jawed Naqvi</p>
+                </div>
+
+            </div>
+        </div>
+        </section>
+        <hr>
+
+        <section>
+            <div class="container">
+                <h2>Editorial</h2>
+                <div class="news-section">
+
+                    <br>
+                    <div class="news-item">
+                        <p> Updated 01 Oct, 2024</p>
+                        <p><b>Punitive tax plan</b></p>
+                        <p>FBR strategy appears to rely solely on enforcement through punitive actions without actually
+                            reforming the
+                            complicated tax regime.</p>
+                        <img src="img edit1.PNG" alt="Monsoon Rains">
+                    </div>
+                    <div class="news-item">
+                        <p> Updated 01 Oct, 2024</p>
+                        <p><b>Punitive tax plan</b></p>
+                        <p>FBR strategy appears to rely solely on enforcement through punitive actions without actually
+                            reforming the
+                            complicated tax regime.</p>
+                    </div>
+                    <div class="news-item">
+                        <p> Updated 01 Oct, 2024</p>
+                        <p><b>Punitive tax plan</b></p>
+                        <p>FBR strategy appears to rely solely on enforcement through punitive actions without actually
+                            reforming the
+                            complicated tax regime.</p>
+                        <img src="img editi.PNG" alt="Extreme Heat">
+                    </div>
+                    <div class="news-item">
+                        <p> Updated 01 Oct, 2024</p>
+                        <p><b>Punitive tax plan</b></p>
+                        <p>FBR strategy appears to rely solely on enforcement through punitive actions without actually
+                            reforming the
+                            complicated tax regime.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-container">
+
+                    <!-- DAWN Logo and Social Media -->
+                    <div class="footer-section">
+                        <h2>DAWN</h2>
+                        <ul class="social-icons">
+                            <li><a href="#"><img src="whatsapp-icon.png">WhatsApp</a></li>
+                            <li><a href="#"><img src="twitter-icon.png">Twitter</a></li>
+                            <li><a href="#"><img src="facebook-icon.png">Facebook</a></li>
+                            <li><a href="#"><img src="instagram-icon.png">Instagram</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Apps -->
+                    <div class="footer-section">
+                        <h3>Mobile Apps</h3>
+                        <ul class="app-icons">
+                            <li><a href="#"><img src="apple-icon.png" >Apple</a></li>
+                            <li><a href="#"><img src="android-icon.png" >Android</a></li>
+                            <li><a href="#"><img src="huawei-icon.png" >Huawei App Gallery</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal Links -->
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Reproduction Copyrights</a></li>
+                            <li><a href="#">Contribution Guidelines</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Comment Moderation</a></li>
+                            <li><a href="#">Code of Ethics</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Subscribe to Newspaper</a></li>
+                            <li><a href="#">Advertise on Dawn.com</a></li>
+                            <li><a href="#">Sponsored Content</a></li>
+                            <li><a href="#">Classifieds</a></li>
+                            <li><a href="#">Obituaries</a></li>
+                            <li><a href="#">Prayer Timings</a></li>
+                            <li><a href="#">Stock/Forex/Gold</a></li>
+                            <li><a href="#">Weather</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- DAWN Network -->
+                    <div class="footer-section">
+                        <h3>DAWN Network</h3>
+                        <ul>
+                            <li><a href="#">Dawn Herald</a></li>
+                            <li><a href="#">Aurora</a></li>
+                            <li><a href="#">Prism</a></li>
+                            <li><a href="#">Dawn News</a></li>
+                            <li><a href="#">Images</a></li>
+                            <li><a href="#">Eos/Icon/Young World</a></li>
+                            <li><a href="#">Cityfm89</a></li>
+                            <li><a href="#">Teeli</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Copyright and Platform Info -->
+                <div class="footer-bottom">
+                    <p>&copy; 2024, Dawn. All rights reserved.</p>
+                    <p>Powered by NewsKit Publishing Platform</p>
+                </div>
+            </div>
+
+        </footer>
+    </main>
+
+
+</html>
